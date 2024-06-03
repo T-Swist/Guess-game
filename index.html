@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Guest Your Lucky Number</title>
+</head>
+<body>
+  <div class="general_container">
+    <div class="content_container">
+      <h2>I Am Thinking of a number between 1-100. <br> Can you Guess it</h2>
+      <input type="number" readonly id="display_container">
+      <br>
+      <input type="number" id="user_input" placeholder="Type in your number Here">
+      <br>
+      <button type="submit" id="guess_btn">Guess</button>
+      <!-- <button type="reset" id="reset_btn">Reset N Try Again</button> -->
+      <p id="first_para"></p>
+      <p id="the_second_para">You guessed it in <span id="the_second_para_span">5</span>
+        Guesses</p>
+    </div>
+  </div>
+
+  <script src="./index.js"></script>
+</body>
+</html>
