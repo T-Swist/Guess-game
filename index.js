@@ -9,53 +9,55 @@ let tryingTimes = 5;
 console.log(randomNumber);
 function guessLuckyNumber() {
  
- 
-  // let showResult = display.value = randomNumber;
-  document.getElementById("guess_btn").addEventListener("click", (e) => {
 
+  // A event to handles the guess function when the guess btn gets click
+  document.getElementById("guess_btn").addEventListener("click", (e) => {
+    // getting elements from the html
     let userInput = document.getElementById("user_input").value;
     let display = document.getElementById("display_container");
     let chancesLeftInWord = document.getElementById("the_second_para_span");
     let chancesLeftInNumber = parseInt(chancesLeftInWord);
-    
-    let whenYouWon = ["1st", "2nd", "3rd", "4"]
+    let firsthtmlp = document.getElementById("first_para");
+    let secondhtmlp = document.getElementById("the_second_para");
+    let htmlgussebtn = document.getElementById("guess_btn");
+   
 
     if (randomNumber == userInput) {
       
-      document.getElementById("first_para").textContent = `You won by guessing the random number which is ${randomNumber}.`;
+      firsthtmlp.textContent = `You won by guessing the random number which is ${randomNumber}.`;
       display.value = randomNumber;
       userInput = "";
-      document.getElementById("guess_btn").innerHTML = "Guess"; 
-      // window.location = "index.html";
+      htmlgussebtn.innerHTML = "Guess"; 
+      
      
      } else if (userInput > randomNumber) {
 
-      document.getElementById("first_para").textContent = "Your input value is too high.";
+      firsthtmlp.textContent = "Your input value is too high.";
       tryingTimes--;
-      document.getElementById("guess_btn").innerHTML = "Try Again";
-      document.getElementById("the_second_para").innerHTML = `You got ${tryingTimes} chances left`;
+      htmlgussebtn.innerHTML = "Try Again";
+      secondhtmlp.innerHTML = `You got ${tryingTimes} chances left`;
 
       if(tryingTimes == 0){
         alert("Game Over")
         display.value = "";
         userInput = "";
-        document.getElementById("the_second_para").innerHTML = `You guessed it in 5 Guesses`;
+        secondhtmlp.innerHTML = `You guessed it in 5 Guesses`;
         window.location = "index.html";
        }
 
 
     } else {
 
-      document.getElementById("first_para").textContent = "Your input value is too low.";
+      firsthtmlp.textContent = "Your input value is too low.";
       tryingTimes--;
-      document.getElementById("guess_btn").innerHTML = "Try Again";
-      document.getElementById("the_second_para").innerHTML = `You got ${tryingTimes} chances left`;
+      htmlgussebtn.innerHTML = "Try Again";
+      secondhtmlp.innerHTML = `You got ${tryingTimes} chances left`;
 
       if(tryingTimes == 0){
         alert("Game Over")
         display.value = "";
         userInput = "";
-        document.getElementById("the_second_para").innerHTML = `You guessed it in 5 Guesses`;
+        secondhtmlp.innerHTML = `You guessed it in 5 Guesses`;
         window.location = "index.html";
         
        }
